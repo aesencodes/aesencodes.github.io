@@ -390,7 +390,7 @@ h4 {
 .about-image {
   height: 100%;
   min-height: 400px;
-  background-image: url(../IMG/about.jpg);
+  background-image: url(../img/about.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 1rem;
