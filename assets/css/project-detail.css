@@ -1,0 +1,355 @@
+/* ========== Base Styles ========== */
+:root {
+  --primary-color: #e94536;
+  --primary-dark: #c53729;
+  --text-color: #191919;
+  --text-light: #4a4a4a;
+  --bg-color: #f4eff1;
+  --white: #fdfdfd;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-size: 1rem; /* 16px base */
+  font-family: "Oswald", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ====== PROJECT DETAIL STYLES ====== */
+.project-detail {
+  padding: 5rem 0 3rem;
+  color: var(--text-color);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin: 0 0.5rem;
+  color: var(--text-light);
+}
+
+.breadcrumb a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current] {
+  color: var(--text-light);
+}
+
+/* Project Header */
+.project-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.project-header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.meta-item i {
+  color: var(--primary-color);
+}
+
+/* Hero Image */
+.project-hero {
+  margin: 3rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-hero figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+/* Content Sections */
+.project-section {
+  margin: 4rem 0;
+}
+
+.project-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.project-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+.feature-highlights {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+
+.feature-highlights li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-highlights li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Implementation Grid */
+.implementation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.tech-stack, .key-features {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.tech-stack h3, .key-features h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.tech-stack ul, .key-features ul {
+  list-style: none;
+}
+
+.tech-stack li, .key-features li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.tech-stack li::before, .key-features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Results Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.result-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg-color);
+  border-radius: 8px;
+}
+
+.result-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonial */
+.testimonial {
+  background: var(--bg-color);
+  padding: 2rem;
+  border-left: 4px solid var(--primary-color);
+  margin: 3rem 0;
+  font-style: italic;
+  position: relative;
+}
+
+.testimonial::before {
+  content: """;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 4rem;
+  color: rgba(233, 69, 54, 0.1);
+  font-family: serif;
+  line-height: 1;
+}
+
+.testimonial footer {
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* CTA Section */
+.project-cta {
+  text-align: center;
+  margin: 5rem 0 3rem;
+  padding: 2rem;
+  background: var(--bg-color);
+  border-radius: 8px;
+}
+
+.project-cta h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 4rem 1.5rem;
+  }
+  
+  .project-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ====== ARCHITECTURE STYLES ====== */
+.architecture {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.architecture-step {
+  position: relative;
+  padding: 1.5rem;
+  background: var(--bg-color);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.step-number {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.architecture-step h3 {
+  margin: 0.5rem 0 1rem;
+  color: var(--primary-color);
+}
+
+.architecture-step p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments for Architecture */
+@media (max-width: 600px) {
+  .architecture {
+    grid-template-columns: 1fr;
+  }
+  
+  .architecture-step {
+    padding-left: 2rem;
+  }
+}
