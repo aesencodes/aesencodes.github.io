@@ -1,56 +1,171 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // DOM Elements
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile Navigation
   const hamburger = document.querySelector(".hamburger");
   const navList = document.querySelector(".nav-list");
-  const navLinks = document.querySelectorAll(".nav-list a");
-  const skipLink = document.querySelector(".skip-link");
 
-  // Mobile Menu Toggle
-  const toggleMenu = () => {
-    const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
-    hamburger.setAttribute("aria-expanded", !isExpanded);
+  hamburger.addEventListener("click", function () {
+    this.setAttribute(
+      "aria-expanded",
+      this.getAttribute("aria-expanded") === "true" ? "false" : "true"
+    );
     navList.classList.toggle("active");
-    document.body.style.overflow = navList.classList.contains("active")
-      ? "hidden"
-      : "";
-  };
+  });
 
-  // Close mobile menu when clicking a link
-  const closeMenu = () => {
-    hamburger.setAttribute("aria-expanded", "false");
-    navList.classList.remove("active");
-    document.body.style.overflow = "";
-  };
-
-  // Event Listeners
-  hamburger.addEventListener("click", toggleMenu);
-
+  // Close mobile menu when clicking on a link
+  const navLinks = document.querySelectorAll(".nav-list a");
   navLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", () => {
+      hamburger.setAttribute("aria-expanded", "false");
+      navList.classList.remove("active");
+    });
   });
 
-  // Skip link focus
-  skipLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = document.querySelector(skipLink.getAttribute("href"));
-    target.setAttribute("tabindex", "-1");
-    target.focus();
-    setTimeout(() => target.removeAttribute("tabindex"), 1000);
-  });
+  // Typing Effect
+  const typingText = document.querySelector(".typing-text");
+  const cursor = document.querySelector(".cursor");
 
-  // Performance optimization: Load non-critical resources after page load
-  window.addEventListener("load", () => {
-    // Load any non-critical CSS or JavaScript here
-    // Example: Load font awesome if needed
-    // const fontAwesome = document.createElement('link');
-    // fontAwesome.rel = 'stylesheet';
-    // fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
-    // document.head.appendChild(fontAwesome);
-  });
+  if (typingText && cursor) {
+    const words = [
+      "TALL Stack Developer",
+      "Laravel Expert",
+      "Machine Learning Engineer",
+    ];
 
-  // Update copyright year
-  const yearElement = document.getElementById("current-year");
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+
+    const typingSpeed = 100;
+    const deletingSpeed = 50;
+    const pauseBetweenWords = 1200;
+
+    function type() {
+      if (isPaused) return;
+
+      const currentWord = words[wordIndex];
+      cursor.style.opacity = isDeleting && charIndex === 0 ? "1" : "0";
+
+      if (!isDeleting) {
+        typingText.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentWord.length) {
+          isPaused = true;
+          setTimeout(() => {
+            isPaused = false;
+            isDeleting = true;
+            type();
+          }, pauseBetweenWords);
+          return;
+        }
+      } else {
+        typingText.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isPaused = true;
+          setTimeout(() => {
+            isPaused = false;
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            type();
+          }, 500);
+          return;
+        }
+      }
+
+      setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+    }
+
+    setTimeout(type, 800);
+
+    // Pause on hover
+    typingText.addEventListener("mouseenter", () => {
+      isPaused = true;
+      cursor.style.opacity = "1";
+    });
+
+    typingText.addEventListener("mouseleave", () => {
+      isPaused = false;
+      type();
+    });
   }
+
+  // Expertise Tabs
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Remove active class from all buttons and contents
+      tabButtons.forEach((btn) => btn.classList.remove("active"));
+      tabContents.forEach((content) => content.classList.remove("active"));
+
+      // Add active class to clicked button
+      button.classList.add("active");
+
+      // Show corresponding content
+      const tabId = button.getAttribute("data-tab");
+      document.getElementById(tabId).classList.add("active");
+    });
+  });
+
+  // Back to Top Button
+  const backToTopButton = document.querySelector(".back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add("active");
+    } else {
+      backToTopButton.classList.remove("active");
+    }
+  });
+
+  // Set current year in footer
+  document.getElementById("current-year").textContent =
+    new Date().getFullYear();
+
+  // Form submission
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Get form values
+      const formData = new FormData(this);
+
+      // Here you would typically send the form data to a server
+      // For demo purposes, we'll just log it and show an alert
+      const formValues = Object.fromEntries(formData.entries());
+      console.log("Form submitted:", formValues);
+
+      alert("Thank you for your message! I will get back to you soon.");
+      this.reset();
+    });
+  }
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerHeight = document.querySelector(".navigation").offsetHeight;
+        const targetPosition =
+          targetElement.getBoundingClientRect().top +
+          window.pageYOffset -
+          headerHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
 });

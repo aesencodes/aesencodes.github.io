@@ -5,375 +5,475 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <title>
-      Adjie Surya Nugraha | Full-Stack Developer | Laravel & React Expert
-    </title>
+    <title>Adjie Surya Nugraha | TALL Stack & ML Developer</title>
     <meta
       name="description"
-      content="Professional Full-Stack Developer specializing in Laravel, React, and Python. I build high-performance web applications with clean code and scalable architecture."
+      content="Full-stack developer specializing in TALL Stack (Tailwind, Alpine, Laravel, Livewire) with Machine Learning integration expertise."
     />
     <meta
       name="keywords"
-      content="Full-Stack Developer, Laravel, React, Python, Web Development, Portfolio"
+      content="TALL Stack Developer, Laravel, Livewire, Machine Learning, Python, Web Development"
     />
     <meta name="author" content="Adjie Surya Nugraha" />
 
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta
-      property="og:title"
-      content="Adjie Surya Nugraha - Full-Stack Developer"
-    />
-    <meta
-      property="og:description"
-      content="Professional Full-Stack Developer specializing in Laravel, React, and Python"
-    />
-    <meta property="og:type" content="website" />
-    <!-- Add your actual URL when deployed -->
-    <meta property="og:url" content="https://yourportfolio.com" />
-    <!-- Add your actual image URL when deployed -->
-    <meta
-      property="og:image"
-      content="https://yourportfolio.com/assets/img/social-preview.jpg"
-    />
-
-    <!-- Canonical URL (add your actual URL when deployed) -->
-    <link rel="canonical" href="https://yourportfolio.com" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
-
     <!-- Preload critical resources -->
     <link rel="preload" href="../assets/css/style.css" as="style" />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Source+Sans+Pro&display=swap"
-      as="font"
-      crossorigin
-    />
+    <link rel="preload" href="../assets/js/script.js" as="script" />
+
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" /> -->
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
 
-    <!-- Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Source+Sans+Pro&display=swap"
-      rel="stylesheet"
-    />
-
+    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Oswald:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- Skip to Content Link for Accessibility -->
+    <!-- Skip to Content Link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navigation" aria-label="Main navigation">
-      <h1 class="brand"><a href="#home">aesen</a></h1>
+      <div class="container">
+        <h1 class="brand"><a href="#home">aesen</a></h1>
 
-      <ul class="nav-list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#contact" class="nav-cta">Hire Me</a>
+          </li>
+        </ul>
 
-      <!-- Hamburger Menu -->
-      <button
-        class="hamburger"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <main id="main-content">
       <!-- Hero Section -->
-      <section class="hero container" id="home">
-        <div class="intro">
-          <h1>
-            Hi, I'm <span class="highlight">Adjie Surya Nugraha</span><br />
-            <span class="subtitle">Full-Stack Developer</span>
-          </h1>
-          <p class="tagline">
-            I craft high-performance web applications with clean code and
-            scalable architecture, delivering exceptional user experiences.
-          </p>
-          <div class="cta-wrapper">
-            <a href="#contact" class="button button-primary">Hire Me</a>
-            <a href="#portfolio" class="button button-secondary"
-              >View My Work</a
-            >
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>
+                <span class="hero-greeting">Hi, I'm</span>
+                <span class="hero-name">Adjie Surya Nugraha</span>
+                <span class="hero-title">
+                  <span class="typing-text"></span>
+                  <span class="cursor"></span>
+                </span>
+              </h1>
+              <p class="hero-description">
+                I build high-performance web applications with
+                <strong>TALL Stack</strong> and integrate
+                <strong>Machine Learning</strong> solutions to create
+                intelligent, data-driven experiences.
+              </p>
+              <div class="hero-actions">
+                <a href="#contact" class="button button-primary">
+                  Get In Touch
+                  <i class="uil uil-message"></i>
+                </a>
+                <a href="#portfolio" class="button button-secondary">
+                  View My Work
+                  <i class="uil uil-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Animated Tech Stack -->
+            <div class="hero-animation">
+              <div class="tech-stack">
+                <div class="stack-item" data-tooltip="Laravel">
+                  <img
+                    src="./assets/img/Laravel Icon.svg"
+                    alt="Laravel"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="stack-item" data-tooltip="Livewire">
+                  <img
+                    src="./assets/img/Livewire Icon.svg"
+                    alt="Livewire"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="stack-item" data-tooltip="Alpine.js">
+                  <img
+                    src="./assets/img/Alpine.js Icon.svg"
+                    alt="Alpine.js"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="stack-item" data-tooltip="Tailwind CSS">
+                  <img
+                    src="./assets/img/Tailwind CSS Icon.svg"
+                    alt="Tailwind CSS"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="stack-item" data-tooltip="Python">
+                  <img
+                    src="./assets/img/Python Icon.svg"
+                    alt="Python"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div
-          class="hero-image"
-          role="img"
-          aria-label="Adjie Surya Nugraha, Full-Stack Developer"
-        ></div>
       </section>
 
       <!-- About Section -->
-      <section
-        class="about container"
-        id="about"
-        aria-labelledby="about-heading"
-      >
-        <header class="section-header">
-          <h2 id="about-heading">
-            <a href="#about" class="section-title">About Me</a>
-          </h2>
-        </header>
-
-        <div class="about-content">
-          <div class="about-image" role="img" aria-label="Adjie Surya Nugraha">
-            <!-- Image will be loaded via CSS -->
+      <section class="about" id="about" aria-labelledby="about-heading">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="about-heading">About Me</h2>
+            <p class="section-subtitle">Get to know me better</p>
           </div>
 
-          <div class="about-details">
-            <h3 class="about-subtitle">Adjie Surya Nugraha</h3>
-            <div class="about-text">
-              <p>
-                I'm a passionate Full-Stack Developer with a Bachelor's degree
-                in Computer Science from Institut Teknologi Sumatera,
-                specializing in building modern web applications with Laravel
-                and React.
-              </p>
-              <p>
-                With expertise in both frontend and backend development, I
-                create responsive, high-performance applications focused on
-                delivering exceptional user experiences. My solutions prioritize
-                clean architecture, scalability, and maintainability.
-              </p>
-              <p>
-                Beyond traditional web development, I have experience
-                integrating machine learning capabilities through Python and
-                Flask, allowing me to build intelligent, data-driven
-                applications.
-              </p>
+          <div class="about-content">
+            <div class="about-image">
+              <img
+                src="./assets/img/aesen.png"
+                alt="Adjie Surya Nugraha"
+                loading="lazy"
+              />
             </div>
-
-            <div class="about-actions">
-              <a
-                href="/assets/files/Adjie Surya Nugraha_CV_en.pdf"
-                download="Adjie Surya Nugraha_CV_en.pdf"
-                class="button button-primary"
-              >
-                Download CV <i class="uil uil-file-download-alt"></i>
-              </a>
-
-              <div class="social-links">
-                <a
-                  href="https://github.com/aesencodes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub profile"
-                >
-                  <i class="uil uil-github"></i>
-                </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn profile"
-                >
-                  <i class="uil uil-linkedin"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services Section -->
-      <section
-        class="services container"
-        id="services"
-        aria-labelledby="services-heading"
-      >
-        <header class="section-header">
-          <h2 id="services-heading">
-            <a href="#services" class="section-title">My Services</a>
-          </h2>
-          <p class="section-subtitle">
-            Comprehensive solutions tailored to your business needs
-          </p>
-        </header>
-
-        <div class="services-grid">
-          <article class="service-card" aria-labelledby="web-dev-heading">
-            <div class="service-icon">
-              <i class="uil uil-brackets-curly" aria-hidden="true"></i>
-            </div>
-            <h3 id="web-dev-heading">Web Development</h3>
-            <p>
-              Custom full-stack development of responsive, high-performance web
-              applications using modern frameworks like Laravel and React. I
-              create solutions that are scalable, maintainable, and deliver
-              exceptional user experiences.
-            </p>
-            <ul class="service-features">
-              <li>Frontend development with React</li>
-              <li>Backend development with Laravel</li>
-              <li>Responsive & mobile-first design</li>
-              <li>Performance optimization</li>
-            </ul>
-          </article>
-
-          <article class="service-card" aria-labelledby="api-dev-heading">
-            <div class="service-icon">
-              <i class="uil uil-server" aria-hidden="true"></i>
-            </div>
-            <h3 id="api-dev-heading">API Development</h3>
-            <p>
-              Design and implementation of robust RESTful APIs that power web
-              and mobile applications. Secure, well-documented APIs built with
-              industry best practices for reliability and scalability.
-            </p>
-            <ul class="service-features">
-              <li>REST API design</li>
-              <li>Authentication & authorization</li>
-              <li>API documentation</li>
-              <li>Third-party API integration</li>
-            </ul>
-          </article>
-
-          <article class="service-card" aria-labelledby="system-int-heading">
-            <div class="service-icon">
-              <i class="uil uil-cog" aria-hidden="true"></i>
-            </div>
-            <h3 id="system-int-heading">System Integration</h3>
-            <p>
-              Seamless connection of disparate systems and implementation of
-              machine learning solutions. I bridge the gap between different
-              technologies to create cohesive, efficient workflows.
-            </p>
-            <ul class="service-features">
-              <li>Legacy system modernization</li>
-              <li>Data pipeline integration</li>
-              <li>Machine learning implementation</li>
-              <li>Python/Flask solutions</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section
-        class="skills container"
-        id="skills"
-        aria-labelledby="skills-heading"
-      >
-        <header class="section-header">
-          <h2 id="skills-heading">
-            <a href="#skills" class="section-title">Skills & Education</a>
-          </h2>
-          <p class="section-subtitle">
-            Technical expertise and academic background
-          </p>
-        </header>
-
-        <div class="skills-content">
-          <div class="skills-grid">
-            <h3 class="skills-subtitle">Technical Skills</h3>
-
-            <div class="skills-list">
-              <div class="skill-item" tabindex="0">
-                <img
-                  src="./assets/img/JS.svg"
-                  alt="JavaScript logo"
-                  loading="lazy"
-                />
-                <span>JavaScript</span>
-                <div class="skill-level" aria-hidden="true">
-                  <span class="filled" style="width: 90%"></span>
-                </div>
-              </div>
-
-              <div class="skill-item" tabindex="0">
-                <img src="./assets/img/PHP.svg" alt="PHP logo" loading="lazy" />
-                <span>PHP</span>
-                <div class="skill-level" aria-hidden="true">
-                  <span class="filled" style="width: 85%"></span>
-                </div>
-              </div>
-
-              <div class="skill-item" tabindex="0">
-                <img
-                  src="./assets/img/Python.svg"
-                  alt="Python logo"
-                  loading="lazy"
-                />
-                <span>Python</span>
-                <div class="skill-level" aria-hidden="true">
-                  <span class="filled" style="width: 80%"></span>
-                </div>
-              </div>
-
-              <div class="skill-item" tabindex="0">
-                <img
-                  src="./assets/img/React.svg"
-                  alt="React logo"
-                  loading="lazy"
-                />
-                <span>React</span>
-                <div class="skill-level" aria-hidden="true">
-                  <span class="filled" style="width: 88%"></span>
-                </div>
-              </div>
-
-              <div class="skill-item" tabindex="0">
-                <img
-                  src="./assets/img/Laravel.svg"
-                  alt="Laravel logo"
-                  loading="lazy"
-                />
-                <span>Laravel</span>
-                <div class="skill-level" aria-hidden="true">
-                  <span class="filled" style="width: 87%"></span>
-                </div>
-              </div>
-
-              <div class="skill-item" tabindex="0">
-                <img
-                  src="https://img.icons8.com/?size=100&id=TtXEs5SeYLG8&format=png&color=000000"
-                  alt="Flask logo"
-                  loading="lazy"
-                />
-                <span>Flask</span>
-                <div class="skill-level" aria-hidden="true">
-                  <span class="filled" style="width: 75%"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="education">
-            <h3 class="education-subtitle">Education</h3>
-
-            <div class="education-item">
-              <div class="education-icon">
-                <i class="uil uil-graduation-cap" aria-hidden="true"></i>
-              </div>
-              <div class="education-details">
-                <h4>Bachelor of Science in Computer Science</h4>
-                <p class="institution">Institut Teknologi Sumatera</p>
-                <!-- <p class="education-period">2018 - 2025</p> -->
-                <p class="education-description">
-                  Focused on software engineering principles, algorithms, and
-                  data structures.
+            <div class="about-details">
+              <h3>Full-Stack Developer with ML Expertise</h3>
+              <div class="about-text">
+                <p>
+                  I specialize in the <strong>TALL Stack</strong> (TailwindCSS,
+                  AlpineJS, Laravel, Livewire) to build modern, reactive web
+                  applications with exceptional user experiences.
                 </p>
+                <p>
+                  My background in Computer Science from Institut Teknologi
+                  Sumatera gives me strong fundamentals in algorithms and data
+                  structures, which I apply to both web development and machine
+                  learning projects.
+                </p>
+                <p>
+                  I've successfully integrated machine learning capabilities
+                  into web applications using Python and Flask, creating
+                  solutions like my Face Recognition Attendance System that's
+                  deployed for 800+ users.
+                </p>
+              </div>
+
+              <div class="about-stats">
+                <div class="stat-item">
+                  <span class="stat-number">1</span>
+                  <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">10+</span>
+                  <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">1000+</span>
+                  <span class="stat-label">System Users</span>
+                </div>
+              </div>
+
+              <div class="about-actions">
+                <a
+                  href="/assets/files/Adjie Surya Nugraha_CV.pdf"
+                  class="button button-primary"
+                >
+                  Download CV
+                  <i class="uil uil-import"></i>
+                </a>
+                <div class="social-links">
+                  <a
+                    href="https://github.com/aesencodes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <i class="uil uil-github"></i>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                  >
+                    <i class="uil uil-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Expertise Section -->
+      <section
+        class="expertise"
+        id="expertise"
+        aria-labelledby="expertise-heading"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 id="expertise-heading">My Expertise</h2>
+            <p class="section-subtitle">Technologies I work with</p>
+          </div>
+
+          <div class="expertise-tabs">
+            <button class="tab-button active" data-tab="tall-stack">
+              TALL Stack
+            </button>
+            <button class="tab-button" data-tab="machine-learning">
+              Machine Learning
+            </button>
+            <button class="tab-button" data-tab="other-skills">
+              Other Skills
+            </button>
+          </div>
+
+          <div class="tab-content active" id="tall-stack">
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/Tailwind CSS Icon.svg"
+                    alt="Tailwind CSS"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>Tailwind CSS</h3>
+                <p>
+                  Rapidly build modern, responsive interfaces with this
+                  utility-first CSS framework.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 88%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/Alpine.js Icon.svg"
+                    alt="Alpine.js"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>Alpine.js</h3>
+                <p>
+                  Enhance interactivity with this lightweight JavaScript
+                  framework that plays well with Laravel.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 80%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/Laravel Icon.svg"
+                    alt="Laravel"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>Laravel</h3>
+                <p>
+                  Expert in building robust backend systems with Laravel's
+                  elegant syntax and powerful features.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 90%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/Livewire icon.svg"
+                    alt="Livewire"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>Livewire</h3>
+                <p>
+                  Create dynamic interfaces without leaving Laravel's comfort
+                  with full-stack Livewire components.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 85%"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="machine-learning">
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/Python Icon.svg"
+                    alt="Python"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>Python</h3>
+                <p>
+                  Develop machine learning models and data processing pipelines
+                  with Python.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 85%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/Flask Icon.svg"
+                    alt="Flask"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>Flask</h3>
+                <p>
+                  Build lightweight APIs and microservices to serve ML models to
+                  web applications.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 80%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/OpenCV Icon.svg"
+                    alt="OpenCV"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>OpenCV</h3>
+                <p>
+                  Computer vision and image processing for applications like
+                  facial recognition.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 75%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/TensorFlow Icon.svg"
+                    alt="TensorFlow"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>TensorFlow</h3>
+                <p>
+                  Develop and train machine learning models for various
+                  applications.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 70%"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="other-skills">
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/JavaScript Icon.svg"
+                    alt="JavaScript"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>JavaScript</h3>
+                <p>
+                  Build interactive front-end experiences with modern
+                  JavaScript.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 90%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/MySQL Icon.svg"
+                    alt="MySQL"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>MySQL</h3>
+                <p>
+                  Design and optimize relational databases for web applications.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 85%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/Git Icon.svg"
+                    alt="Git"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>Git</h3>
+                <p>Version control and collaborative development workflows.</p>
+                <div class="skill-level">
+                  <span style="width: 80%"></span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">
+                  <img
+                    src="./assets/img/Docker Icon.svg"
+                    alt="Docker"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>Docker</h3>
+                <p>
+                  Containerize applications for consistent development and
+                  deployment.
+                </p>
+                <div class="skill-level">
+                  <span style="width: 75%"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -382,282 +482,208 @@
 
       <!-- Portfolio Section -->
       <section
-        class="portfolio container"
+        class="portfolio"
         id="portfolio"
         aria-labelledby="portfolio-heading"
       >
-        <header class="section-header">
-          <h2 id="portfolio-heading">
-            <a href="#portfolio" class="section-title">Featured Projects</a>
-          </h2>
-          <p class="section-subtitle">
-            A selection of my recent work showcasing technical expertise and
-            problem-solving
-          </p>
-        </header>
+        <div class="container">
+          <div class="section-header">
+            <h2 id="portfolio-heading">Featured Projects</h2>
+            <p class="section-subtitle">
+              My recent work showcasing TALL Stack and ML expertise
+            </p>
+          </div>
 
-        <div class="portfolio-grid">
-          <article class="portfolio-item" tabindex="0">
-            <div class="portfolio-image-wrapper">
-              <img
-                src="./assets/img/Attendance System Mockup.png"
-                alt="Face Recognition Attendance system interface"
-                loading="lazy"
-                class="portfolio-image"
-              />
-              <div class="portfolio-overlay">
-                <a href="./projects/attendance-system.html">
-                  <button class="view-project-button">View Project</button>
+          <div class="portfolio-grid">
+            <article class="portfolio-card" tabindex="0">
+              <div class="portfolio-image">
+                <img
+                  src="./assets/img/Attendance System Mockup.png"
+                  alt="Face Recognition Attendance System"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-links">
+                    <a
+                      href="./projects/attendance-system.html"
+                      class="portfolio-link"
+                      aria-label="View Face Recognition Attendance System details"
+                    >
+                      <i class="uil uil-eye"></i>
+                    </a>
+                    <a
+                      href="http://presensi.itera.ac.id/"
+                      class="portfolio-link"
+                      aria-label="Visit Face Recognition Attendance System"
+                    >
+                      <i class="uil uil-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3>Face Recognition Attendance</h3>
+                <p class="portfolio-description">
+                  Biometric attendance system combining computer vision with web
+                  interface, deployed for 800+ users.
+                </p>
+                <div class="portfolio-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Flask</span>
+                  <span class="tech-tag">OpenCV</span>
+                  <span class="tech-tag">CodeIgniter</span>
+                </div>
+                <a
+                  href="./projects/attendance-system.html"
+                  class="portfolio-cta"
+                >
+                  View Case Study
+                  <i class="uil uil-arrow-right"></i>
                 </a>
               </div>
-            </div>
-            <div class="portfolio-content">
-              <h3>Face Recognition Attendance</h3>
-              <p class="portfolio-description">
-                Secure biometric attendance system developed as my thesis
-                project:
-              </p>
-              <ul class="portfolio-features">
-                <li>Facial recognition with OpenCV</li>
-                <li>Flask backend with REST API</li>
-                <li>CodeIgniter 3 admin interface</li>
-                <li>Deployed for 800+ university staff</li>
-              </ul>
-              <div class="portfolio-tags">
-                <span class="tag">CodeIgniter 3</span>
-                <span class="tag">Flask</span>
-                <span class="tag">OpenCV</span>
-              </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="portfolio-item" tabindex="0">
-            <div class="portfolio-image-wrapper">
-              <img
-                src="./assets/img/Menkorpstar Mockup.png"
-                alt="Resimen Korps Taruna System dashboard showing financial reports"
-                loading="lazy"
-                class="portfolio-image"
-              />
-              <div class="portfolio-overlay">
-                <a href="./projects/menkorpstar.html">
-                  <button class="view-project-button">View Project</button>
+            <article class="portfolio-card" tabindex="0">
+              <div class="portfolio-image">
+                <img
+                  src="./assets/img/Menkorpstar Mockup.png"
+                  alt="Resimen Korps Taruna System"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <div class="portfolio-links">
+                    <a
+                      href="./projects/menkorpstar.html"
+                      class="portfolio-link"
+                      aria-label="View Resimen Korps Taruna System details"
+                    >
+                      <i class="uil uil-eye"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="portfolio-link"
+                      aria-label="Visit Resimen Korps Taruna System"
+                    >
+                      <i class="uil uil-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3>Resimen Korps Taruna System</h3>
+                <p class="portfolio-description">
+                  Comprehensive web-based information system for Indonesian
+                  Aviation Polytechnic.
+                </p>
+                <div class="portfolio-tech">
+                  <span class="tech-tag">Laravel</span>
+                  <span class="tech-tag">Livewire</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                </div>
+                <a href="./projects/menkorpstar.html" class="portfolio-cta">
+                  View Case Study
+                  <i class="uil uil-arrow-right"></i>
                 </a>
               </div>
-            </div>
-            <div class="portfolio-content">
-              <h3>Resimen Korps Taruna System</h3>
-              <p class="portfolio-description">
-                Comprehensive web-based information system for Indonesian
-                Aviation Polytechnic featuring:
-              </p>
-              <ul class="portfolio-features">
-                <li>Financial reporting module with analytics</li>
-                <li>Internal communication platform</li>
-                <li>Role-based access control</li>
-                <li>Built with Laravel</li>
-              </ul>
-              <div class="portfolio-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">MySQL</span>
-              </div>
-            </div>
-          </article>
+            </article>
+          </div>
 
-          <article class="portfolio-item" tabindex="0">
-            <div class="portfolio-image-wrapper">
-              <img
-                src="./assets/img/Jelajah Outdoor Mockup.png"
-                alt="Outdoor Equipment Rental mobile app screens"
-                loading="lazy"
-                class="portfolio-image"
-              />
-              <div class="portfolio-overlay">
-                <a href="./projects/outdoor-rental-app.html">
-                  <button class="view-project-button">View Project</button>
-                </a>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <h3>Outdoor Equipment Rental</h3>
-              <p class="portfolio-description">
-                Mobile application for outdoor enthusiasts to browse and book
-                equipment:
-              </p>
-              <ul class="portfolio-features">
-                <li>React Native cross-platform app</li>
-                <li>Real-time availability checking</li>
-                <li>Secure payment integration</li>
-                <li>User rating system</li>
-              </ul>
-              <div class="portfolio-tags">
-                <span class="tag">React Native</span>
-                <span class="tag">Firebase</span>
-                <span class="tag">Redux</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="portfolio-cta">
-          <a href="#contact" class="button button-primary"
-            >Have a similar project? Let's talk</a
-          >
+          <div class="portfolio-cta">
+            <a href="#contact" class="button button-primary">
+              Have a project in mind? Let's talk
+              <i class="uil uil-message"></i>
+            </a>
+          </div>
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section
-        class="contact container"
-        id="contact"
-        aria-labelledby="contact-heading"
-      >
-        <header class="section-header">
-          <h2 id="contact-heading">
-            <a href="#contact" class="section-title">Get In Touch</a>
-          </h2>
-          <p class="section-subtitle">
-            Feel free to reach out through these channels
-          </p>
-        </header>
-
-        <div class="contact-methods">
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="uil uil-envelope" aria-hidden="true"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Email Me</h3>
-              <p>For project inquiries or collaboration opportunities</p>
-              <a
-                href="mailto:adjiesuryanugraha1@gmail.com"
-                class="button button-outline"
-              >
-                Send Email <i class="uil uil-arrow-right"></i>
-              </a>
-            </div>
+      <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="contact-heading">Get In Touch</h2>
+            <p class="section-subtitle">I'd love to hear about your project</p>
           </div>
 
-          <!-- <div class="contact-card">
-            <div class="contact-icon">
-              <i class="uil uil-phone" aria-hidden="true"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Call Me</h3>
-              <p>Available for direct calls during business hours</p>
-              <a href="tel:+6281292948716" class="button button-outline">
-                Call Now <i class="uil uil-phone"></i>
-              </a>
-            </div>
-          </div> -->
-
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="uil uil-comment-dots" aria-hidden="true"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Social Media</h3>
-              <p>Connect with me on professional networks</p>
-              <div class="social-links">
-                <a
-                  href="https://github.com/aesencodes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
+          <div class="contact-info-container">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="uil uil-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h3>Email</h3>
+                <a href="mailto:adjiesuryanugraha1@gmail.com"
+                  >adjiesuryanugraha1@gmail.com</a
                 >
-                  <i class="uil uil-github"></i>
-                </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <i class="uil uil-linkedin"></i>
-                </a>
               </div>
             </div>
-          </div>
 
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="uil uil-map-marker" aria-hidden="true"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Location</h3>
-              <p>Based in Bandar Lampung, Indonesia</p>
-              <a
-                href="https://maps.google.com/?q=Bandar+Lampung"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button button-outline"
-              >
-                View Map <i class="uil uil-location-point"></i>
-              </a>
+            <!-- <div class="info-card">
+              <div class="info-icon">
+                <i class="uil uil-map-marker"></i>
+              </div>
+              <div class="info-content">
+                <h3>Location</h3>
+                <p>Bandar Lampung, Indonesia</p>
+              </div>
+            </div> -->
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="uil uil-share-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Social Media</h3>
+                <div class="social-links">
+                  <a
+                    href="https://github.com/aesencodes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <i class="uil uil-github"></i>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                  >
+                    <i class="uil uil-linkedin"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-brand">
+          <div class="footer-about">
             <h3 class="footer-logo">aesen</h3>
-            <p class="footer-tagline">
-              Building digital experiences that matter
+            <p class="footer-description">
+              Building digital experiences with TALL Stack and Machine Learning.
             </p>
-            <div class="footer-social">
-              <a
-                href="https://github.com/aesencodes"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <i class="uil uil-github"></i>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <i class="uil uil-linkedin"></i>
-              </a>
-              <!-- <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <i class="uil uil-twitter"></i>
-              </a> -->
-              <!-- <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <i class="uil uil-instagram"></i>
-              </a> -->
-            </div>
           </div>
 
           <div class="footer-links">
-            <h4 class="footer-title">Quick Links</h4>
+            <h3 class="footer-title">Quick Links</h3>
             <ul>
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#expertise">Expertise</a></li>
+              <li><a href="#portfolio">Projects</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
 
           <div class="footer-contact">
-            <h4 class="footer-title">Contact Info</h4>
+            <h3 class="footer-title">Contact Info</h3>
             <ul>
               <li>
                 <i class="uil uil-envelope"></i>
@@ -665,13 +691,9 @@
                   >adjiesuryanugraha1@gmail.com</a
                 >
               </li>
-              <!-- <li>
-                <i class="uil uil-phone"></i>
-                <a href="tel:+1234567890">(+62) 812-9294-8716</a>
-              </li> -->
               <li>
                 <i class="uil uil-map-marker"></i>
-                <span>Bandar Lampung, Indonesia</span>
+                <span>Indonesia</span>
               </li>
             </ul>
           </div>
@@ -679,13 +701,19 @@
 
         <div class="footer-bottom">
           <p>
-            &copy; <span id="current-year"></span> aesen. All rights reserved.
+            &copy; <span id="current-year"></span> Adjie Surya Nugraha. All
+            rights reserved.
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- Load JavaScript at the end of body -->
-    <script src="../assets/js/script.js" defer></script>
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+      <i class="uil uil-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/script.js"></script>
   </body>
 </html>

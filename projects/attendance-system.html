@@ -3,33 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Face Recognition Attendance System | Biometric Solution | Adjie Surya
-      Nugraha
-    </title>
+    <title>Face Recognition Attendance System | Adjie Surya Nugraha</title>
     <meta
       name="description"
-      content="Innovative biometric attendance system using facial recognition technology, developed as a thesis project and deployed for 800+ university staff members."
-    />
-    <meta
-      name="keywords"
-      content="face recognition attendance, biometric system, OpenCV, Flask API, CodeIgniter, thesis project, university solution"
-    />
-
-    <!-- Canonical URL -->
-    <link
-      rel="canonical"
-      href="https://yourportfolio.com/projects/face-recognition-attendance"
+      content="Biometric attendance solution using facial recognition technology developed as a thesis project and deployed for 800+ university staff"
     />
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta
-      property="og:title"
-      content="Face Recognition Attendance System | Adjie Surya Nugraha"
-    />
+    <meta property="og:title" content="Face Recognition Attendance System" />
     <meta
       property="og:description"
-      content="Biometric attendance solution using facial recognition technology"
+      content="Innovative biometric attendance system using facial recognition technology"
     />
     <meta property="og:type" content="website" />
     <meta
@@ -41,288 +25,263 @@
       content="https://yourportfolio.com/assets/img/attendance-social.jpg"
     />
 
-    <!-- Reuse your existing assets -->
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/project-detail.css" />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Source+Sans+Pro&display=swap"
-      as="font"
-      crossorigin
-    />
 
-    <!-- Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Source+Sans+Pro&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Oswald:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- Navigation (same as main site) -->
+    <!-- Navigation -->
     <nav class="navigation" aria-label="Main navigation">
-      <h1 class="brand"><a href="../index.html">aesen</a></h1>
-      <ul class="nav-list">
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#services">Services</a></li>
-        <li><a href="../index.html#skills">Skills</a></li>
-        <li><a href="../index.html#portfolio">Portfolio</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
-      </ul>
-      <button
-        class="hamburger"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-      >
-        <span></span><span></span><span></span>
-      </button>
+      <div class="container">
+        <h1 class="brand"><a href="/index.html">aesen</a></h1>
+
+        <ul class="nav-list">
+          <li><a href="/index.html#About">About</a></li>
+          <li><a href="/index.html#expertise">Expertise</a></li>
+          <li><a href="/index.html#portfolio">Projects</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+          <li>
+            <a href="/index.html#contact" class="nav-cta">Hire Me</a>
+          </li>
+        </ul>
+
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- Project Detail Content -->
-    <main class="project-detail container">
-      <article>
-        <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../index.html#portfolio">Portfolio</a></li>
-            <li aria-current="page">Face Recognition Attendance</li>
-          </ol>
-        </nav>
+    <main class="project-detail">
+      <div class="container">
+        <article>
+          <!-- Breadcrumb Navigation -->
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#portfolio">Portfolio</a></li>
+              <li aria-current="page">Face Recognition Attendance</li>
+            </ol>
+          </nav>
 
-        <!-- Project Header -->
-        <header class="project-header">
-          <h1>Face Recognition Attendance System</h1>
-          <p class="project-subtitle">
-            Biometric solution eliminating time fraud and streamlining
-            university attendance tracking
-          </p>
-
-          <div class="project-meta">
-            <div class="meta-item">
-              <i class="uil uil-calendar-alt"></i>
-              <span>Completed: May 2025</span>
-            </div>
-            <div class="meta-item">
-              <i class="uil uil-graduation-cap"></i>
-              <span>Project: Computer Science Thesis</span>
-            </div>
-            <div class="meta-item">
-              <i class="uil uil-users-alt"></i>
-              <span>Users: 800+ university staff</span>
-            </div>
-          </div>
-        </header>
-
-        <!-- Main Project Image -->
-        <figure class="project-hero">
-          <img
-            src="../assets/img/Attendance System Mockup.png"
-            alt="Face recognition attendance system interface showing live camera feed and recognition results"
-            loading="eager"
-          />
-          <figcaption>
-            Real-time face detection and recognition interface
-          </figcaption>
-        </figure>
-
-        <!-- Project Content Sections -->
-        <section class="project-section">
-          <h2>Project Overview</h2>
-          <p>
-            The Face Recognition Attendance System was developed as my
-            bachelor's thesis to address persistent attendance fraud and
-            limitations in the existing fingerprint-based system at Institut
-            Teknologi Sumatera. This hybrid solution combines:
-          </p>
-
-          <ul class="feature-highlights">
-            <li>
-              Python-based facial recognition for accurate biometric
-              verification
-            </li>
-            <li>
-              Web-based administration portal for management and reporting
-            </li>
-            <li>Real-time attendance tracking with geolocation validation</li>
-          </ul>
-        </section>
-
-        <section class="project-section">
-          <h2>Technical Implementation</h2>
-
-          <div class="implementation-grid">
-            <div class="tech-stack">
-              <h3>Technology Stack</h3>
-              <ul>
-                <li>
-                  <strong>Facial Recognition:</strong> Python, OpenCV, Dlib
-                </li>
-                <li><strong>Backend API:</strong> Flask RESTful API</li>
-                <li><strong>Admin Interface:</strong> CodeIgniter 3 (PHP)</li>
-                <li>
-                  <strong>Database:</strong> MySQL with optimized face encodings
-                </li>
-              </ul>
-            </div>
-
-            <div class="key-features">
-              <h3>Key Features</h3>
-              <ul>
-                <li>98.7% accurate face recognition in varied lighting</li>
-                <li>Anti-spoofing with liveness detection</li>
-                <li>Real-time attendance reporting dashboard</li>
-                <li>Geofencing to prevent remote clock-ins</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="project-section">
-          <h2>System Architecture</h2>
-          <div class="architecture">
-            <div class="architecture-step">
-              <div class="step-number">1</div>
-              <h3>Face Enrollment</h3>
-              <p>
-                Staff members register through the web portal with multiple
-                facial captures from different angles
-              </p>
-            </div>
-            <div class="architecture-step">
-              <div class="step-number">2</div>
-              <h3>Recognition Process</h3>
-              <p>
-                Python service processes camera feed, extracts 128-dimension
-                face encodings, and matches against database
-              </p>
-            </div>
-            <div class="architecture-step">
-              <div class="step-number">3</div>
-              <h3>Data Integration</h3>
-              <p>
-                Flask API records attendance events which are displayed in the
-                CodeIgniter admin portal
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="project-section">
-          <h2>Results Delivered</h2>
-
-          <div class="results-grid">
-            <div class="result-card">
-              <div class="result-value">98.7%</div>
-              <p>Recognition accuracy in production environment</p>
-            </div>
-            <div class="result-card">
-              <div class="result-value">100%</div>
-              <p>Elimination of proxy attendance fraud</p>
-            </div>
-            <div class="result-card">
-              <div class="result-value">800+</div>
-              <p>Staff members using the system daily</p>
-            </div>
-          </div>
-
-          <blockquote class="testimonial">
-            <p>
-              "We see this facial recognition system as a critical step toward
-              securing the integrity of our attendance process. Unlike our
-              previous fingerprint-based system—which we found to be vulnerable
-              to manipulation—this solution offers greater accuracy and
-              accountability. The transition was smooth, supported by clear
-              documentation and comprehensive training provided by Adjie."
+          <!-- Project Header -->
+          <header class="project-header">
+            <h1>Face Recognition Attendance System</h1>
+            <p class="project-subtitle">
+              Biometric solution eliminating attendance fraud with facial
+              recognition technology
             </p>
-            <footer>
-              - Head of the ICT Center, Institut Teknologi Sumatera
-            </footer>
-          </blockquote>
-        </section>
 
-        <section class="project-cta">
-          <h2>Need a Custom Biometric Solution?</h2>
-          <p>
-            This project demonstrates my expertise in computer vision and hybrid
-            system architecture. Let's discuss how I can implement a similar
-            solution for your organization.
-          </p>
-          <div class="cta-buttons">
-            <a href="../index.html#contact" class="button button-primary"
-              >Get in Touch</a
-            >
-            <a href="../index.html#portfolio" class="button button-secondary"
-              >View Other Projects</a
-            >
-          </div>
-        </section>
-      </article>
+            <div class="project-meta">
+              <div class="meta-item">
+                <i class="uil uil-calendar-alt"></i>
+                <span>May 2025</span>
+              </div>
+              <div class="meta-item">
+                <i class="uil uil-graduation-cap"></i>
+                <span>Computer Science Thesis</span>
+              </div>
+              <div class="meta-item">
+                <i class="uil uil-users-alt"></i>
+                <span>800+ users</span>
+              </div>
+            </div>
+          </header>
+
+          <!-- Main Project Image -->
+          <figure class="project-hero">
+            <img
+              src="../assets/img/Attendance System Mockup.png"
+              alt="Dashboard interface of Face Recognition Attendance System"
+              loading="eager"
+              class="project-image"
+            />
+            <figcaption>
+              Dashboard interface of Face Recognition Attendance System
+            </figcaption>
+          </figure>
+
+          <!-- Project Content Sections -->
+          <section class="project-section">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="section-text">
+              Developed as my bachelor's thesis at Institut Teknologi Sumatera,
+              this system addresses attendance fraud limitations in traditional
+              fingerprint systems with:
+            </p>
+
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i class="uil uil-check-circle"></i>
+                <span
+                  >Python-based facial recognition for accurate biometric
+                  verification</span
+                >
+              </li>
+              <li class="feature-item">
+                <i class="uil uil-check-circle"></i>
+                <span>Web-based administration portal for management</span>
+              </li>
+              <li class="feature-item">
+                <i class="uil uil-check-circle"></i>
+                <span>Real-time tracking with geolocation validation</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="project-section">
+            <h2 class="section-title">Technical Implementation</h2>
+
+            <div class="implementation-grid">
+              <div class="tech-card">
+                <div class="tech-icon">
+                  <i class="uil uil-cog"></i>
+                </div>
+                <h3>Technology Stack</h3>
+                <ul class="tech-list">
+                  <li>Python, OpenCV, Dlib</li>
+                  <li>Flask RESTful API</li>
+                  <li>CodeIgniter 3 (PHP)</li>
+                  <li>MySQL with face encodings</li>
+                </ul>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="uil uil-star"></i>
+                </div>
+                <h3>Key Features</h3>
+                <ul class="feature-list">
+                  <li>98.7% recognition accuracy</li>
+                  <li>Anti-spoofing liveness detection</li>
+                  <li>Real-time reporting dashboard</li>
+                  <li>Geofencing security</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture">
+              <div class="architecture-step">
+                <div class="step-number">1</div>
+                <h3>Face Enrollment</h3>
+                <p>
+                  Staff register through web portal with multiple facial
+                  captures from different angles
+                </p>
+              </div>
+              <div class="architecture-step">
+                <div class="step-number">2</div>
+                <h3>Recognition Process</h3>
+                <p>
+                  Python service processes camera feed and matches against
+                  database
+                </p>
+              </div>
+              <div class="architecture-step">
+                <div class="step-number">3</div>
+                <h3>Data Integration</h3>
+                <p>
+                  Flask API records attendance events displayed in admin portal
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <h2 class="section-title">Results Delivered</h2>
+
+            <div class="results-grid">
+              <div class="result-card">
+                <div class="result-value">98.7%</div>
+                <p class="result-label">Recognition accuracy</p>
+              </div>
+              <div class="result-card">
+                <div class="result-value">100%</div>
+                <p class="result-label">Fraud elimination</p>
+              </div>
+              <div class="result-card">
+                <div class="result-value">800+</div>
+                <p class="result-label">Daily users</p>
+              </div>
+            </div>
+
+            <div class="testimonial">
+              <blockquote>
+                "This facial recognition system offers greater accuracy and
+                accountability than our previous fingerprint system. The
+                transition was smooth with Adjie's comprehensive training."
+              </blockquote>
+              <div class="testimonial-author">
+                - Head of ICT Center, Institut Teknologi Sumatera
+              </div>
+            </div>
+          </section>
+
+          <section class="project-cta">
+            <h2>Need a Custom Biometric Solution?</h2>
+            <p>
+              Let's discuss how I can implement a similar solution for your
+              organization.
+            </p>
+            <div class="cta-buttons">
+              <a href="../index.html#contact" class="button button-primary"
+                >Get in Touch</a
+              >
+              <a href="../index.html#portfolio" class="button button-secondary"
+                >View Other Projects</a
+              >
+            </div>
+          </section>
+        </article>
+      </div>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-brand">
+          <div class="footer-about">
             <h3 class="footer-logo">aesen</h3>
-            <p class="footer-tagline">
-              Building digital experiences that matter
+            <p class="footer-description">
+              Building digital experiences with TALL Stack and Machine Learning.
             </p>
-            <div class="footer-social">
-              <a
-                href="https://github.com/aesencodes"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <i class="uil uil-github"></i>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <i class="uil uil-linkedin"></i>
-              </a>
-              <!-- <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <i class="uil uil-twitter"></i>
-              </a> -->
-              <!-- <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <i class="uil uil-instagram"></i>
-              </a> -->
-            </div>
           </div>
 
           <div class="footer-links">
-            <h4 class="footer-title">Quick Links</h4>
+            <h3 class="footer-title">Quick Links</h3>
             <ul>
-              <li><a href="../index.html#home">Home</a></li>
-              <li><a href="../index.html#about">About</a></li>
-              <li><a href="../index.html#services">Services</a></li>
-              <li><a href="../index.html#portfolio">Portfolio</a></li>
-              <li><a href="../index.html#contact">Contact</a></li>
+              <li><a href="/index.html#home">Home</a></li>
+              <li><a href="/index.html#about">About</a></li>
+              <li><a href="/index.html#expertise">Expertise</a></li>
+              <li><a href="/index.html#portfolio">Projects</a></li>
+              <li><a href="/index.html#contact">Contact</a></li>
             </ul>
           </div>
 
           <div class="footer-contact">
-            <h4 class="footer-title">Contact Info</h4>
+            <h3 class="footer-title">Contact Info</h3>
             <ul>
               <li>
                 <i class="uil uil-envelope"></i>
@@ -330,13 +289,9 @@
                   >adjiesuryanugraha1@gmail.com</a
                 >
               </li>
-              <!-- <li>
-                <i class="uil uil-phone"></i>
-                <a href="tel:+1234567890">(+62) 812-9294-8716</a>
-              </li> -->
               <li>
                 <i class="uil uil-map-marker"></i>
-                <span>Bandar Lampung, Indonesia</span>
+                <span>Indonesia</span>
               </li>
             </ul>
           </div>
@@ -344,12 +299,14 @@
 
         <div class="footer-bottom">
           <p>
-            &copy; <span id="current-year"></span> aesen. All rights reserved.
+            &copy; <span id="current-year"></span> Adjie Surya Nugraha. All
+            rights reserved.
           </p>
         </div>
       </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="../assets/js/script.js"></script>
   </body>
 </html>
