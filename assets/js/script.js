@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function initMobileNavigation() {
   const hamburger = document.querySelector(".hamburger");
   const navList = document.querySelector(".nav-list");
+  const html = document.documentElement;
 
   if (!hamburger || !navList) return;
 
@@ -27,13 +28,15 @@ function initMobileNavigation() {
     const isExpanded = this.getAttribute("aria-expanded") === "true";
     this.setAttribute("aria-expanded", !isExpanded);
     navList.classList.toggle("active");
+
+    // Prevent scrolling when menu is open
+    html.style.overflow = isExpanded ? "auto" : "hidden";
   }
 
   function closeMobileMenu() {
-    if (navList.classList.contains("active")) {
-      hamburger.setAttribute("aria-expanded", "false");
-      navList.classList.remove("active");
-    }
+    hamburger.setAttribute("aria-expanded", "false");
+    navList.classList.remove("active");
+    html.style.overflow = "auto";
   }
 }
 
@@ -157,8 +160,16 @@ function initBackToTopButton() {
   const backToTopButton = document.querySelector(".back-to-top");
   if (!backToTopButton) return;
 
+  // Adjust visibility threshold
   window.addEventListener("scroll", () => {
-    backToTopButton.classList.toggle("active", window.pageYOffset > 300);
+    const scrollPosition = window.pageYOffset;
+    const heroHeight = document.querySelector(".hero")?.offsetHeight || 0;
+
+    // Only show when scrolled past hero section
+    backToTopButton.classList.toggle(
+      "active",
+      scrollPosition > heroHeight * 0.5
+    );
   });
 }
 
