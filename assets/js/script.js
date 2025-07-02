@@ -1,98 +1,138 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Mobile Navigation
+  // Initialize all functionality
+  initMobileNavigation();
+  initTypingEffect();
+  initExpertiseTabs();
+  initBackToTopButton();
+  updateCurrentYear();
+  initSmoothScrolling();
+});
+
+// Mobile Navigation
+function initMobileNavigation() {
   const hamburger = document.querySelector(".hamburger");
   const navList = document.querySelector(".nav-list");
 
-  hamburger.addEventListener("click", function () {
-    this.setAttribute(
-      "aria-expanded",
-      this.getAttribute("aria-expanded") === "true" ? "false" : "true"
-    );
-    navList.classList.toggle("active");
-  });
+  if (!hamburger || !navList) return;
+
+  hamburger.addEventListener("click", toggleMobileMenu);
 
   // Close mobile menu when clicking on a link
   const navLinks = document.querySelectorAll(".nav-list a");
   navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      hamburger.setAttribute("aria-expanded", "false");
-      navList.classList.remove("active");
-    });
+    link.addEventListener("click", closeMobileMenu);
   });
 
-  // Typing Effect
+  function toggleMobileMenu() {
+    const isExpanded = this.getAttribute("aria-expanded") === "true";
+    this.setAttribute("aria-expanded", !isExpanded);
+    navList.classList.toggle("active");
+  }
+
+  function closeMobileMenu() {
+    if (navList.classList.contains("active")) {
+      hamburger.setAttribute("aria-expanded", "false");
+      navList.classList.remove("active");
+    }
+  }
+}
+
+// Typing Effect
+function initTypingEffect() {
   const typingText = document.querySelector(".typing-text");
   const cursor = document.querySelector(".cursor");
 
-  if (typingText && cursor) {
-    const words = [
-      "TALL Stack Developer",
-      "Laravel Expert",
-      "Machine Learning Engineer",
-    ];
+  if (!typingText || !cursor) return;
 
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let isPaused = false;
+  const words = [
+    "TALL Stack Developer",
+    "Laravel Expert",
+    "Machine Learning Engineer",
+  ];
 
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const pauseBetweenWords = 1200;
+  const typingConfig = {
+    wordIndex: 0,
+    charIndex: 0,
+    isDeleting: false,
+    isPaused: false,
+    typingSpeed: 100,
+    deletingSpeed: 50,
+    pauseBetweenWords: 1200,
+  };
 
-    function type() {
-      if (isPaused) return;
+  function type() {
+    if (typingConfig.isPaused) return;
 
-      const currentWord = words[wordIndex];
-      cursor.style.opacity = isDeleting && charIndex === 0 ? "1" : "0";
+    const currentWord = words[typingConfig.wordIndex];
+    cursor.style.opacity =
+      typingConfig.isDeleting && typingConfig.charIndex === 0 ? "1" : "0";
 
-      if (!isDeleting) {
-        typingText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
+    if (!typingConfig.isDeleting) {
+      // Typing forward
+      typingText.textContent = currentWord.substring(
+        0,
+        typingConfig.charIndex + 1
+      );
+      typingConfig.charIndex++;
 
-        if (charIndex === currentWord.length) {
-          isPaused = true;
-          setTimeout(() => {
-            isPaused = false;
-            isDeleting = true;
-            type();
-          }, pauseBetweenWords);
-          return;
-        }
-      } else {
-        typingText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-          isPaused = true;
-          setTimeout(() => {
-            isPaused = false;
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            type();
-          }, 500);
-          return;
-        }
+      if (typingConfig.charIndex === currentWord.length) {
+        pauseTyping(() => {
+          typingConfig.isDeleting = true;
+          type();
+        }, typingConfig.pauseBetweenWords);
+        return;
       }
+    } else {
+      // Deleting backward
+      typingText.textContent = currentWord.substring(
+        0,
+        typingConfig.charIndex - 1
+      );
+      typingConfig.charIndex--;
 
-      setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+      if (typingConfig.charIndex === 0) {
+        pauseTyping(() => {
+          typingConfig.isDeleting = false;
+          typingConfig.wordIndex = (typingConfig.wordIndex + 1) % words.length;
+          type();
+        }, 500);
+        return;
+      }
     }
 
-    setTimeout(type, 800);
-
-    // Pause on hover
-    typingText.addEventListener("mouseenter", () => {
-      isPaused = true;
-      cursor.style.opacity = "1";
-    });
-
-    typingText.addEventListener("mouseleave", () => {
-      isPaused = false;
-      type();
-    });
+    setTimeout(
+      type,
+      typingConfig.isDeleting
+        ? typingConfig.deletingSpeed
+        : typingConfig.typingSpeed
+    );
   }
 
-  // Expertise Tabs
+  function pauseTyping(callback, duration) {
+    typingConfig.isPaused = true;
+    setTimeout(() => {
+      typingConfig.isPaused = false;
+      callback();
+    }, duration);
+  }
+
+  // Start typing after initial delay
+  setTimeout(type, 800);
+
+  // Pause on hover
+  typingText.addEventListener("mouseenter", () => {
+    typingConfig.isPaused = true;
+    cursor.style.opacity = "1";
+  });
+
+  typingText.addEventListener("mouseleave", () => {
+    typingConfig.isPaused = false;
+    type();
+  });
+}
+
+// Expertise Tabs
+function initExpertiseTabs() {
   const tabButtons = document.querySelectorAll(".tab-button");
   const tabContents = document.querySelectorAll(".tab-content");
 
@@ -110,62 +150,50 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById(tabId).classList.add("active");
     });
   });
+}
 
-  // Back to Top Button
+// Back to Top Button
+function initBackToTopButton() {
   const backToTopButton = document.querySelector(".back-to-top");
+  if (!backToTopButton) return;
 
   window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) {
-      backToTopButton.classList.add("active");
-    } else {
-      backToTopButton.classList.remove("active");
-    }
+    backToTopButton.classList.toggle("active", window.pageYOffset > 300);
   });
+}
 
-  // Set current year in footer
-  document.getElementById("current-year").textContent =
-    new Date().getFullYear();
-
-  // Form submission
-  const contactForm = document.getElementById("contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Get form values
-      const formData = new FormData(this);
-
-      // Here you would typically send the form data to a server
-      // For demo purposes, we'll just log it and show an alert
-      const formValues = Object.fromEntries(formData.entries());
-      console.log("Form submitted:", formValues);
-
-      alert("Thank you for your message! I will get back to you soon.");
-      this.reset();
-    });
+// Update Current Year in Footer
+function updateCurrentYear() {
+  const yearElement = document.getElementById("current-year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
   }
+}
 
-  // Smooth scrolling for anchor links
+// Smooth Scrolling
+function initSmoothScrolling() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        const headerHeight = document.querySelector(".navigation").offsetHeight;
-        const targetPosition =
-          targetElement.getBoundingClientRect().top +
-          window.pageYOffset -
-          headerHeight;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
-      }
-    });
+    anchor.addEventListener("click", handleSmoothScroll);
   });
-});
+
+  function handleSmoothScroll(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    if (targetId === "#") return;
+
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const headerHeight =
+        document.querySelector(".navigation")?.offsetHeight || 0;
+      const targetPosition =
+        targetElement.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  }
+}
