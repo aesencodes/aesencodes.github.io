@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initBackToTopButton();
   updateCurrentYear();
   initSmoothScrolling();
+  initTechStackAnimation();
 });
 
 // Mobile Navigation
@@ -38,6 +39,13 @@ function initMobileNavigation() {
     navList.classList.remove("active");
     html.style.overflow = "auto";
   }
+
+  // Tambahkan pengecekan resize
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      html.style.overflow = "auto";
+    }
+  });
 }
 
 // Typing Effect
@@ -132,6 +140,118 @@ function initTypingEffect() {
     typingConfig.isPaused = false;
     type();
   });
+}
+
+// Tech Stack Animation with requestAnimationFrame
+function initTechStackAnimation() {
+  const techStack = document.querySelector(".tech-stack");
+  if (!techStack) return;
+
+  const items = Array.from(document.querySelectorAll(".stack-item"));
+  if (items.length === 0) return;
+
+  // Configuration
+  const config = {
+    radius: 120, // Base radius
+    speed: 0.5, // Degrees per frame
+    centerX: 0,
+    centerY: 0,
+    angles: [],
+    isPaused: false,
+    lastTimestamp: 0,
+  };
+
+  // Initialize angles
+  items.forEach((_, index) => {
+    config.angles[index] = (index * (360 / items.length)) % 360;
+  });
+
+  // Initialize positions
+  function init() {
+    const rect = techStack.getBoundingClientRect();
+    config.centerX = rect.width / 2;
+    config.centerY = rect.height / 2;
+
+    // Adjust for mobile
+    if (window.innerWidth <= 768) {
+      config.radius = 90;
+    } else {
+      config.radius = 120;
+    }
+  }
+
+  // Update item positions
+  function updatePositions(timestamp) {
+    if (!config.lastTimestamp) {
+      config.lastTimestamp = timestamp;
+    }
+
+    const deltaTime = timestamp - config.lastTimestamp;
+    config.lastTimestamp = timestamp;
+
+    if (config.isPaused) {
+      requestAnimationFrame(updatePositions);
+      return;
+    }
+
+    // Calculate progress based on time to maintain consistent speed
+    const progress = deltaTime / 16; // Normalize to 60fps
+
+    items.forEach((item, index) => {
+      // Update angle
+      config.angles[index] =
+        (config.angles[index] + config.speed * progress) % 360;
+
+      // Convert to radians
+      const angleInRad = (config.angles[index] * Math.PI) / 180;
+
+      // Calculate position
+      const x = config.centerX + config.radius * Math.cos(angleInRad);
+      const y = config.centerY + config.radius * Math.sin(angleInRad);
+
+      // Apply transformation
+      item.style.transform = `translate(${x - config.centerX}px, ${
+        y - config.centerY
+      }px)`;
+    });
+
+    requestAnimationFrame(updatePositions);
+  }
+
+  // Handle hover events
+  function setupHoverEffects() {
+    items.forEach((item) => {
+      item.addEventListener("mouseenter", () => {
+        item.classList.add("hover");
+        config.isPaused = true;
+      });
+
+      item.addEventListener("mouseleave", () => {
+        item.classList.remove("hover");
+        config.isPaused = false;
+      });
+    });
+  }
+
+  // Handle window resize
+  function handleResize() {
+    init();
+  }
+
+  // Initialize everything
+  function startAnimation() {
+    init();
+    setupHoverEffects();
+    window.addEventListener("resize", handleResize);
+    requestAnimationFrame(updatePositions);
+  }
+
+  // Start when everything is loaded
+  if (document.readyState === "complete") {
+    startAnimation();
+  } else {
+    window.addEventListener("load", startAnimation);
+  }
 }
 
 // Expertise Tabs

@@ -439,15 +439,21 @@ textarea:focus {
   width: 100%;
   height: 400px;
   perspective: 1000px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  isolation: isolate;
 }
 
+/* Tech Stack Container */
 .tech-stack {
   position: relative;
   width: 300px;
   height: 300px;
   margin: 0 auto;
+  perspective: 1000px;
 }
 
+/* Stack Items - Base Styles */
 .stack-item {
   position: absolute;
   width: 70px;
@@ -458,10 +464,12 @@ textarea:focus {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  animation: orbit 15s linear infinite;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: -35px; /* Half of width */
+  margin-top: -35px; /* Half of height */
+  will-change: transform;
+  transition: transform 0.3s ease;
 }
 
 .stack-item img {
@@ -498,9 +506,8 @@ textarea:focus {
 }
 
 /* Hover Effects */
-.stack-item:hover {
-  animation-play-state: paused;
-  transform: scale(1.1) translate(-50%, -50%);
+.stack-item.hover {
+  transform: scale(1.1) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
@@ -509,6 +516,26 @@ textarea:focus {
   transform: scale(1.2);
 }
 
+/* Touch devices - alternative to hover */
+@media (hover: none) {
+  .stack-item:active {
+    transform: scale(1.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  .stack-item:active img {
+    transform: scale(1.2);
+  }
+
+  .stack-item:active::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -50px;
+  }
+}
+
+/* Tooltip Styles */
 .stack-item::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -558,6 +585,10 @@ textarea:focus {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    overflow: hidden; /* Mencegah efek animasi keluar dari container */
+  }
+
   .hero-name {
     font-size: 2.5rem;
   }
@@ -579,6 +610,34 @@ textarea:focus {
   .stack-item {
     width: 60px;
     height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
+
+  .stack-item img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .stack-item:nth-child(1) {
+    top: 20%;
+    left: 20%;
+  }
+  .stack-item:nth-child(2) {
+    top: 30%;
+    left: 80%;
+  }
+  .stack-item:nth-child(3) {
+    top: 70%;
+    left: 20%;
+  }
+  .stack-item:nth-child(4) {
+    top: 80%;
+    left: 70%;
+  }
+  .stack-item:nth-child(5) {
+    top: 50%;
+    left: 50%;
   }
 
   @keyframes orbit {
@@ -1173,9 +1232,6 @@ textarea:focus {
 
 /* ========== Back to Top ========== */
 .back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
   width: 50px;
   height: 50px;
   background-color: var(--primary-color);
@@ -1189,6 +1245,11 @@ textarea:focus {
   visibility: hidden;
   transition: var(--transition);
   z-index: 999;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  transform: none !important; /* Pastikan tidak terpengaruh animasi lain */
+  will-change: opacity, visibility;
 }
 
 .back-to-top.active {
