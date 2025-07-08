@@ -50,16 +50,23 @@ function initMobileNavigation() {
 
 // Typing Effect
 function initTypingEffect() {
-  const typingText = document.querySelector(".typing-text");
-  const cursor = document.querySelector(".cursor");
+  const typingContainer = document.querySelector(".hero-title");
+  if (!typingContainer) return;
 
-  if (!typingText || !cursor) return;
+  // Buat element untuk teks dan cursor
+  const typingText = document.createElement("span");
+  typingText.className = "typing-text";
 
-  const words = [
-    "TALL Stack Developer",
-    "Laravel Expert",
-    "Machine Learning Engineer",
-  ];
+  const cursor = document.createElement("span");
+  cursor.className = "typing-cursor";
+  cursor.innerHTML = "|";
+
+  // Kosongkan container dan tambahkan element baru
+  typingContainer.innerHTML = "";
+  typingContainer.appendChild(typingText);
+  typingContainer.appendChild(cursor);
+
+  const words = ["Web Developer", "Machine Learning Enthusiast"];
 
   const typingConfig = {
     wordIndex: 0,
@@ -69,17 +76,27 @@ function initTypingEffect() {
     typingSpeed: 100,
     deletingSpeed: 50,
     pauseBetweenWords: 1200,
+    cursorVisible: true,
   };
 
+  // Animasi cursor blink
+  function animateCursor() {
+    cursor.style.opacity = typingConfig.cursorVisible ? "1" : "0";
+    typingConfig.cursorVisible = !typingConfig.cursorVisible;
+    setTimeout(animateCursor, 500);
+  }
+
+  // Proses typing
   function type() {
-    if (typingConfig.isPaused) return;
+    if (typingConfig.isPaused) {
+      setTimeout(type, 100);
+      return;
+    }
 
     const currentWord = words[typingConfig.wordIndex];
-    cursor.style.opacity =
-      typingConfig.isDeleting && typingConfig.charIndex === 0 ? "1" : "0";
 
     if (!typingConfig.isDeleting) {
-      // Typing forward
+      // Mengetik maju
       typingText.textContent = currentWord.substring(
         0,
         typingConfig.charIndex + 1
@@ -87,14 +104,14 @@ function initTypingEffect() {
       typingConfig.charIndex++;
 
       if (typingConfig.charIndex === currentWord.length) {
-        pauseTyping(() => {
+        typingConfig.isPaused = true;
+        setTimeout(() => {
+          typingConfig.isPaused = false;
           typingConfig.isDeleting = true;
-          type();
         }, typingConfig.pauseBetweenWords);
-        return;
       }
     } else {
-      // Deleting backward
+      // Menghapus
       typingText.textContent = currentWord.substring(
         0,
         typingConfig.charIndex - 1
@@ -102,44 +119,24 @@ function initTypingEffect() {
       typingConfig.charIndex--;
 
       if (typingConfig.charIndex === 0) {
-        pauseTyping(() => {
-          typingConfig.isDeleting = false;
-          typingConfig.wordIndex = (typingConfig.wordIndex + 1) % words.length;
-          type();
+        typingConfig.isDeleting = false;
+        typingConfig.wordIndex = (typingConfig.wordIndex + 1) % words.length;
+        typingConfig.isPaused = true;
+        setTimeout(() => {
+          typingConfig.isPaused = false;
         }, 500);
-        return;
       }
     }
 
-    setTimeout(
-      type,
-      typingConfig.isDeleting
-        ? typingConfig.deletingSpeed
-        : typingConfig.typingSpeed
-    );
+    const speed = typingConfig.isDeleting
+      ? typingConfig.deletingSpeed
+      : typingConfig.typingSpeed;
+    setTimeout(type, speed);
   }
 
-  function pauseTyping(callback, duration) {
-    typingConfig.isPaused = true;
-    setTimeout(() => {
-      typingConfig.isPaused = false;
-      callback();
-    }, duration);
-  }
-
-  // Start typing after initial delay
-  setTimeout(type, 800);
-
-  // Pause on hover
-  typingText.addEventListener("mouseenter", () => {
-    typingConfig.isPaused = true;
-    cursor.style.opacity = "1";
-  });
-
-  typingText.addEventListener("mouseleave", () => {
-    typingConfig.isPaused = false;
-    type();
-  });
+  // Mulai animasi
+  setTimeout(animateCursor, 500);
+  setTimeout(type, 1000);
 }
 
 // Tech Stack Animation with requestAnimationFrame
